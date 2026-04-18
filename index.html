@@ -442,17 +442,19 @@ section{padding:110px 0;position:relative}
 .story .attrib strong{display:block;color:var(--navy);font-weight:600}
 .story .attrib span{font-size:.88rem;color:var(--muted)}
 
+/* voices */
 .voices{
-  margin-top:80px;
+  margin:80px auto 0;
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:24px;
+  grid-template-columns: 1fr 1fr;
+  gap:28px;
+  max-width:900px;
 }
-.voices{
-  margin-top:80px;
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap:24px;
+
+@media(max-width:700px){
+  .voices{
+    grid-template-columns: 1fr;
+  }
 }
 .voice{
   background:#fff;padding:32px;border-radius:18px;
