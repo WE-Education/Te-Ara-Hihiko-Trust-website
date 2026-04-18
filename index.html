@@ -448,7 +448,11 @@ section{padding:110px 0;position:relative}
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap:24px;
 }
-@media(max-width:900px){.voices{grid-template-columns:1fr}}
+@media(max-width:900px){
+  .voices{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .voice{
   background:#fff;padding:32px;border-radius:18px;
   border:1px solid var(--line);
