@@ -450,6 +450,15 @@ section{padding:110px 0;position:relative}
   gap:32px;
   max-width:1400px;
 }
+  .voices.full{
+  width:100vw;
+  margin-left:calc(50% - 50vw);   /* THIS breaks it full width */
+  padding:0 60px;
+
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:36px;
+}
 
 .voice{
   flex:1;
@@ -462,10 +471,10 @@ section{padding:110px 0;position:relative}
 }
 .voice{
   background:#fff;
-  padding:20px;          /* slightly bigger for balance */
+  padding:16px;
   border-radius:18px;
   border:1px solid var(--line);
-  height:100%;           /* makes all cards equal height */
+  position: relative;   /* ADD THIS LINE */
 }
 @media(max-width:1100px){
   .voices{
@@ -948,8 +957,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
     </div>
   </div>
 
-  <div class="wrap">
-<div class="voices">
+<div class="voices full">
   <div class="voice reveal visible">
     <p>At the start, I didn't want to speak at all. By the end of the programme, I was presenting in front of the whole group.</p>
     <cite>— Year 10 Student</cite>
