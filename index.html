@@ -87,9 +87,11 @@ section{padding:110px 0;position:relative}
   box-shadow:0 1px 0 var(--line);
   padding:12px 28px;
 }
-.nav-logo{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;color:var(--navy);font-weight:500;font-size:1.15rem;letter-spacing:-.01em}
-.nav-logo img{height:44px;width:auto}
-.nav-logo small{display:block;font-family:'Figtree';font-size:.65rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.nav-logo{display:flex;align-items:center;gap:0;font-family:'Fraunces',serif;color:var(--navy);font-weight:500;font-size:1.15rem;letter-spacing:-.01em;transition:transform .3s ease}
+.nav-logo:hover{transform:scale(1.02)}
+.nav-logo img{height:88px;width:auto;transition:height .3s ease}
+.nav.scrolled .nav-logo img{height:68px}
+.nav-logo span.brand-text{display:none}
 .nav-links{display:flex;gap:34px;align-items:center}
 .nav-links a{font-size:.92rem;font-weight:500;color:var(--navy);position:relative;padding:4px 0}
 .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
@@ -640,9 +642,8 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 
 <!-- ================= NAV ================= -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">
+  <a href="#" class="nav-logo" aria-label="Te Ara Hihiko Trust — Home">
     <img src="logo.png" alt="Te Ara Hihiko Trust">
-    <span>Te Ara Hihiko<small>Empowering minds</small></span>
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
@@ -715,11 +716,11 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <!-- ================= MISSION ================= -->
 <section class="mission" id="about">
   <div class="wrap">
-    <div class="reveal">
+    <div class="reveal visible">
       <span class="eyebrow">Our Purpose</span>
       <h2 class="display">A student's <em>background</em><br>should never determine<br>their access to opportunity.</h2>
     </div>
-    <div class="reveal d1">
+    <div class="reveal d1 visible">
       <div class="body">
         <p>Across Aotearoa, there are capable, curious, and motivated students who are ready to step beyond their immediate environment. Yet too often, financial barriers stand in the way. <strong>Talent is everywhere — but opportunity is not.</strong></p>
         <p>Te Ara Hihiko Trust creates meaningful pathways for students who may otherwise never access international learning. These aren't luxuries. They are transformative experiences that shape how young people see themselves and their place in the world.</p>
@@ -732,7 +733,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 
   <div class="wrap">
     <div class="pillars">
-      <div class="pillar reveal">
+      <div class="pillar reveal visible">
         <div class="pillar-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5L12 2z"></path></svg>
         </div>
@@ -740,7 +741,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
         <h3>Scholarships &amp; Support</h3>
         <p>Direct financial support so no student is left behind because of cost.</p>
       </div>
-      <div class="pillar reveal d1">
+      <div class="pillar reveal d1 visible">
         <div class="pillar-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"></path></svg>
         </div>
@@ -748,7 +749,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
         <h3>Global Partnerships</h3>
         <p>Schools, communities, and international institutions working together.</p>
       </div>
-      <div class="pillar reveal d2">
+      <div class="pillar reveal d2 visible">
         <div class="pillar-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-4.5-8-11a8 8 0 1116 0c0 6.5-8 11-8 11z"></path><circle cx="12" cy="11" r="3"></circle></svg>
         </div>
@@ -756,7 +757,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
         <h3>Safe &amp; Structured</h3>
         <p>High-quality exchange programmes with pastoral care at every stage.</p>
       </div>
-      <div class="pillar reveal d3">
+      <div class="pillar reveal d3 visible">
         <div class="pillar-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
         </div>
@@ -771,10 +772,10 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <!-- ================= VIDEO FEATURE ================= -->
 <section class="video-feature" id="watch">
   <div class="wrap">
-    <span class="eyebrow reveal">Watch</span>
-    <h2 class="display reveal d1">This trip didn't just take me<br>to another country — it helped me<br>see a <em>bigger future</em> for myself.</h2>
+    <span class="eyebrow reveal visible">Watch</span>
+    <h2 class="display reveal d1 visible">This trip didn't just take me<br>to another country — it helped me<br>see a <em>bigger future</em> for myself.</h2>
 
-    <div class="video-wrap reveal d2" onclick="playVideo(this)">
+    <div class="video-wrap reveal d2 visible" onclick="playVideo(this)">
       <div class="play">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
       </div>
@@ -788,15 +789,15 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
     </div>
 
     <div class="video-thumbs">
-      <div class="vthumb reveal" style="background-image:url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&amp;q=80')">
+      <div class="vthumb reveal visible" style="background-image:url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&amp;q=80')">
         <div class="play-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
         <span>Inside a host school</span>
       </div>
-      <div class="vthumb reveal d1" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&amp;q=80')">
+      <div class="vthumb reveal d1 visible" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&amp;q=80')">
         <div class="play-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
         <span>Homestay moments</span>
       </div>
-      <div class="vthumb reveal d2" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&amp;q=80')">
+      <div class="vthumb reveal d2 visible" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&amp;q=80')">
         <div class="play-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
         <span>Returning home</span>
       </div>
@@ -808,11 +809,11 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <section class="gallery" id="gallery">
   <div class="wrap">
     <div class="gallery-header">
-      <div class="reveal">
+      <div class="reveal visible">
         <span class="eyebrow">Moments</span>
         <h2 class="display">Faces, friendships,<br><em>first-times.</em></h2>
       </div>
-      <div class="gallery-filter reveal d1">
+      <div class="gallery-filter reveal d1 visible">
         <button class="active" data-filter="all">All</button>
         <button data-filter="exchange">Exchange</button>
         <button data-filter="school">School visits</button>
@@ -822,31 +823,31 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
     </div>
 
     <div class="grid">
-      <div class="tile t1 reveal" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&amp;q=80')">
+      <div class="tile t1 reveal visible" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&amp;q=80')">
         <div class="meta"><h4>Welcome ceremony, Kyoto</h4><p>March 2025</p></div>
       </div>
-      <div class="tile t2 reveal d1" style="background-image:url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&amp;q=80')">
+      <div class="tile t2 reveal d1 visible" style="background-image:url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&amp;q=80')">
         <div class="meta"><h4>Classroom exchange</h4><p>Seoul</p></div>
       </div>
-      <div class="tile t3 reveal d2" style="background-image:url('https://images.unsplash.com/photo-1591789397062-dd89a9a4cb4e?w=700&amp;q=80')">
+      <div class="tile t3 reveal d2 visible" style="background-image:url('https://images.unsplash.com/photo-1591789397062-dd89a9a4cb4e?w=700&amp;q=80')">
         <div class="meta"><h4>New friendships</h4><p>Shanghai</p></div>
       </div>
-      <div class="tile t4 reveal d3" style="background-image:url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&amp;q=80')">
+      <div class="tile t4 reveal d3 visible" style="background-image:url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&amp;q=80')">
         <div class="meta"><h4>Group presentation</h4><p>Tokyo</p></div>
       </div>
-      <div class="tile t5 reveal" style="background-image:url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&amp;q=80')">
+      <div class="tile t5 reveal visible" style="background-image:url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&amp;q=80')">
         <div class="meta"><h4>Cultural immersion</h4><p>Kyoto</p></div>
       </div>
-      <div class="tile t6 reveal d1" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&amp;q=80')">
+      <div class="tile t6 reveal d1 visible" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&amp;q=80')">
         <div class="meta"><h4>Host school, first day</h4><p>Sydney</p></div>
       </div>
-      <div class="tile t7 reveal d2" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&amp;q=80')">
+      <div class="tile t7 reveal d2 visible" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&amp;q=80')">
         <div class="meta"><h4>Community learning</h4><p>Melbourne</p></div>
       </div>
-      <div class="tile t8 reveal d3" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&amp;q=80')">
+      <div class="tile t8 reveal d3 visible" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&amp;q=80')">
         <div class="meta"><h4>Family farewell</h4><p>Auckland</p></div>
       </div>
-      <div class="tile t9 reveal d4" style="background-image:url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&amp;q=80')">
+      <div class="tile t9 reveal d4 visible" style="background-image:url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&amp;q=80')">
         <div class="meta"><h4>Homestay family</h4><p>Osaka</p></div>
       </div>
     </div>
@@ -856,12 +857,12 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <!-- ================= TRANSFORMATION FLOW ================= -->
 <section class="transform-sec">
   <div class="wrap">
-    <span class="eyebrow reveal">From possibility to transformation</span>
-    <h2 class="display reveal d1">A single opportunity can<br>change the <em>direction</em> of a life.</h2>
-    <p class="sub reveal d2">Every student's journey follows three phases — from unfamiliar horizons to lifelong confidence.</p>
+    <span class="eyebrow reveal visible">From possibility to transformation</span>
+    <h2 class="display reveal d1 visible">A single opportunity can<br>change the <em>direction</em> of a life.</h2>
+    <p class="sub reveal d2 visible">Every student's journey follows three phases — from unfamiliar horizons to lifelong confidence.</p>
 
     <div class="tflow">
-      <div class="tstep reveal d1">
+      <div class="tstep reveal d1 visible">
         <div class="phase">Before</div>
         <h4>The Horizon</h4>
         <ul>
@@ -870,8 +871,8 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
           <li>Uncertainty about future pathways</li>
         </ul>
       </div>
-      <div class="arrow-big reveal d2">→</div>
-      <div class="tstep reveal d2">
+      <div class="arrow-big reveal d2 visible">→</div>
+      <div class="tstep reveal d2 visible">
         <div class="phase">During</div>
         <h4>The Journey</h4>
         <ul>
@@ -880,8 +881,8 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
           <li>Stepping outside comfort zones</li>
         </ul>
       </div>
-      <div class="arrow-big reveal d3">→</div>
-      <div class="tstep reveal d3">
+      <div class="arrow-big reveal d3 visible">→</div>
+      <div class="tstep reveal d3 visible">
         <div class="phase">After</div>
         <h4>The Return</h4>
         <ul>
@@ -897,8 +898,8 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <!-- ================= STUDENT STORY ================= -->
 <section class="story" id="story">
   <div class="wrap">
-    <div class="story-img reveal"></div>
-    <div class="reveal d1">
+    <div class="story-img reveal visible"></div>
+    <div class="reveal d1 visible">
       <span class="eyebrow">A student's story</span>
       <h2 style="font-family:'Fraunces',serif;font-size:2rem;font-weight:400;color:var(--navy-deep);margin:16px 0 30px;line-height:1.15">Before this trip, I had never travelled outside of New Zealand.</h2>
       <blockquote>
@@ -916,15 +917,15 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 
   <div class="wrap">
     <div class="voices">
-      <div class="voice reveal">
+      <div class="voice reveal visible">
         <p>At the start, I didn't want to speak at all. By the end of the programme, I was presenting in front of the whole group.</p>
         <cite>— Year 10 Student</cite>
       </div>
-      <div class="voice reveal d1">
+      <div class="voice reveal d1 visible">
         <p>We couldn't speak the same language perfectly, but we still understood each other. That was the best part.</p>
         <cite>— Student Participant</cite>
       </div>
-      <div class="voice reveal d2">
+      <div class="voice reveal d2 visible">
         <p>Before this, I didn't think about university. Now I feel like I have more options for my future.</p>
         <cite>— Year 11 Student</cite>
       </div>
@@ -935,12 +936,12 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <!-- ================= IMPACT NUMBERS ================= -->
 <section class="impact">
   <div class="wrap">
-    <h3 class="reveal">What your support makes possible over <em>three years</em></h3>
+    <h3 class="reveal visible">What your support makes possible over <em>three years</em></h3>
     <div class="i-grid">
-      <div class="reveal"><div class="inum" data-count="56">0</div><div class="ilabel">Students supported</div></div>
-      <div class="reveal d1"><div class="inum" data-count="280">0</div><div class="ilabel">Thousand NZD goal</div></div>
-      <div class="inum-wrap reveal d2"><div class="inum">100<span style="font-size:.5em;vertical-align:super">%</span></div><div class="ilabel">Equity-focused</div></div>
-      <div class="reveal d3"><div class="inum" data-count="12">0</div><div class="ilabel">Funding streams</div></div>
+      <div class="reveal visible"><div class="inum" data-count="56">56</div><div class="ilabel">Students supported</div></div>
+      <div class="reveal d1 visible"><div class="inum" data-count="280">280</div><div class="ilabel">Thousand NZD goal</div></div>
+      <div class="inum-wrap reveal d2 visible"><div class="inum">100<span style="font-size:.5em;vertical-align:super">%</span></div><div class="ilabel">Equity-focused</div></div>
+      <div class="reveal d3 visible"><div class="inum" data-count="12">12</div><div class="ilabel">Funding streams</div></div>
     </div>
   </div>
 </section>
@@ -949,13 +950,13 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <section class="tiers" id="partner">
   <div class="wrap">
     <div class="tiers-head">
-      <span class="eyebrow reveal">Partnership &amp; naming rights</span>
-      <h2 class="display reveal d1">Partner with us <em>for impact</em></h2>
-      <p class="reveal d2">Join a movement that empowers young people and strengthens communities. Every partnership unlocks doors for students who would otherwise miss out.</p>
+      <span class="eyebrow reveal visible">Partnership &amp; naming rights</span>
+      <h2 class="display reveal d1 visible">Partner with us <em>for impact</em></h2>
+      <p class="reveal d2 visible">Join a movement that empowers young people and strengthens communities. Every partnership unlocks doors for students who would otherwise miss out.</p>
     </div>
 
     <div class="tier-grid">
-      <div class="tier reveal">
+      <div class="tier reveal visible">
         <div class="tier-top"><span class="tier-name">Community</span></div>
         <div class="tier-price">$500<small> NZD</small></div>
         <p class="tier-desc">Begin the journey alongside us.</p>
@@ -967,7 +968,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
         <a href="#donate" class="btn ghost">Become a partner</a>
       </div>
 
-      <div class="tier reveal d1">
+      <div class="tier reveal d1 visible">
         <div class="tier-top"><span class="tier-name">Supporting</span></div>
         <div class="tier-price">$2,500<small> NZD</small></div>
         <p class="tier-desc">Deepen your community impact.</p>
@@ -980,7 +981,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
         <a href="#donate" class="btn ghost">Become a partner</a>
       </div>
 
-      <div class="tier featured reveal d2">
+      <div class="tier featured reveal d2 visible">
         <div class="tier-top"><span class="tier-name">Major</span><span class="tier-flag">Most popular</span></div>
         <div class="tier-price">$5,000<small> NZD+</small></div>
         <p class="tier-desc">Become part of the storytelling.</p>
@@ -993,7 +994,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
         <a href="#donate" class="btn gold">Become a partner</a>
       </div>
 
-      <div class="tier reveal d3">
+      <div class="tier reveal d3 visible">
         <div class="tier-top"><span class="tier-name">Strategic</span></div>
         <div class="tier-price">$10,000<small> NZD+</small></div>
         <p class="tier-desc">Name a cohort. Shape a generation.</p>
@@ -1013,16 +1014,16 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <section class="cta" id="donate">
   <div class="wrap">
     <div>
-      <span class="eyebrow reveal" style="color:var(--gold-soft)">Ways of giving</span>
-      <h2 class="reveal d1">Your gift <em>opens a door</em><br>that cannot be closed.</h2>
-      <p class="reveal d2">A typical exchange experience costs between NZD $4,500 and $6,000 per student — covering flights, programme delivery, homestay, and pastoral care. Every contribution goes directly toward student participation.</p>
-      <div class="cta-buttons reveal d3">
+      <span class="eyebrow reveal visible" style="color:var(--gold-soft)">Ways of giving</span>
+      <h2 class="reveal d1 visible">Your gift <em>opens a door</em><br>that cannot be closed.</h2>
+      <p class="reveal d2 visible">A typical exchange experience costs between NZD $4,500 and $6,000 per student — covering flights, programme delivery, homestay, and pastoral care. Every contribution goes directly toward student participation.</p>
+      <div class="cta-buttons reveal d3 visible">
         <a href="#" class="btn">Give monthly <span class="arrow">→</span></a>
         <a href="#" class="btn ghost">Talk to our team</a>
       </div>
     </div>
 
-    <div class="cta-card reveal d2">
+    <div class="cta-card reveal d2 visible">
       <h4>Make a one-time gift</h4>
       <label>Amount (NZD)</label>
       <div class="amount-pills">
@@ -1042,12 +1043,12 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
 <section class="trustees" id="trustees">
   <div class="wrap">
     <div class="trustees-head">
-      <span class="eyebrow reveal">Our Trustees</span>
-      <h2 class="display reveal d1">Leadership grounded in <em>equity</em></h2>
-      <p class="reveal d2">Our trustees bring together experience, expertise, and a shared commitment to creating pathways for every young person in Aotearoa.</p>
+      <span class="eyebrow reveal visible">Our Trustees</span>
+      <h2 class="display reveal d1 visible">Leadership grounded in <em>equity</em></h2>
+      <p class="reveal d2 visible">Our trustees bring together experience, expertise, and a shared commitment to creating pathways for every young person in Aotearoa.</p>
     </div>
     <div class="tgrid">
-      <div class="trustee reveal">
+      <div class="trustee reveal visible">
         <div class="trustee-img"><span class="initial">CY</span></div>
         <div class="trustee-body">
           <h4>Dr Colleen Young</h4>
@@ -1055,7 +1056,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
           <p>Strategic oversight and governance leadership. A lifelong champion for equity, Colleen ensures the Trust stays focused on creating transformative opportunities for young people facing barriers.</p>
         </div>
       </div>
-      <div class="trustee reveal d1">
+      <div class="trustee reveal d1 visible">
         <div class="trustee-img"><span class="initial">LW</span></div>
         <div class="trustee-body">
           <h4>Leanne Webb</h4>
@@ -1063,7 +1064,7 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
           <p>A respected educational leader in South Auckland with a deep commitment to student wellbeing, equity, and inclusive education — championing pathways for diverse learners to succeed.</p>
         </div>
       </div>
-      <div class="trustee reveal d2">
+      <div class="trustee reveal d2 visible">
         <div class="trustee-img"><span class="initial">DL</span></div>
         <div class="trustee-body">
           <h4>Diana Li</h4>
