@@ -446,9 +446,9 @@ section{padding:110px 0;position:relative}
 .voices{
   margin:80px auto 0;
   display:grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+  grid-template-columns: repeat(5, 1fr);  /* 5 in one row */
   gap:20px;
-  max-width:1000px;  /* wider container */
+  max-width:1200px;   /* wider so 5 can fit */
 }
 
 @media(max-width:700px){
@@ -458,19 +458,17 @@ section{padding:110px 0;position:relative}
 }
 .voice{
   background:#fff;
-  padding:18px;   /* smaller so 3 can fit */
+  padding:16px;   /* slightly smaller */
   border-radius:18px;
   border:1px solid var(--line);
-  position:relative;
-  transition:all .4s ease;
 }
-  @media(max-width:900px){
+@media(max-width:1100px){
   .voices{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
   .voices{
     grid-template-columns: 1fr;
   }
@@ -946,21 +944,32 @@ footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
   </div>
 
   <div class="wrap">
-    <div class="voices">
-      <div class="voice reveal visible">
-        <p>At the start, I didn't want to speak at all. By the end of the programme, I was presenting in front of the whole group.</p>
-        <cite>— Year 10 Student</cite>
-      </div>
-      <div class="voice reveal d1 visible">
-        <p>We couldn't speak the same language perfectly, but we still understood each other. That was the best part.</p>
-        <cite>— Student Participant</cite>
-      </div>
-      <div class="voice reveal d2 visible">
-        <p>Before this, I didn't think about university. Now I feel like I have more options for my future.</p>
-        <cite>— Year 11 Student</cite>
-      </div>
-    </div>
+<div class="voices">
+  <div class="voice reveal visible">
+    <p>At the start, I didn't want to speak at all. By the end of the programme, I was presenting in front of the whole group.</p>
+    <cite>— Year 10 Student</cite>
   </div>
+
+  <div class="voice reveal d1 visible">
+    <p>We couldn't speak the same language perfectly, but we still understood each other. That was the best part.</p>
+    <cite>— Student Participant</cite>
+  </div>
+
+  <div class="voice reveal d2 visible">
+    <p>Before this, I didn't think about university. Now I feel like I have more options for my future.</p>
+    <cite>— Year 11 Student</cite>
+  </div>
+
+  <div class="voice reveal d3 visible">
+    <p>I didn’t think a trip like this would ever be possible for me. Te Ara Hihiko made it real, and it changed how I see my future.</p>
+    <cite>— Year 12 Student</cite>
+  </div>
+
+  <div class="voice reveal d4 visible">
+    <p>Because of the support, I was able to travel, learn, and meet people from around the world. I came back more confident than I’ve ever been.</p>
+    <cite>— Student Participant</cite>
+  </div>
+</div>
 </section>
 
 <!-- ================= IMPACT NUMBERS ================= -->
