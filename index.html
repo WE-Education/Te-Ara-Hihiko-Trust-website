@@ -239,10 +239,12 @@ section{padding:110px 0;position:relative}
 .pillars{
   margin-top:80px;
 
-  width:100vw;
-  margin-left:calc(50% - 50vw);  /* break out of container */
+  width:100%;
+  max-width:1400px;     /* ⭐ keeps it centered nicely */
+  margin-left:auto;
+  margin-right:auto;
 
-  padding:0 60px;
+  padding:0 28px;       /* matches your site padding */
 
   display:grid;
   grid-template-columns: repeat(4, 1fr);
