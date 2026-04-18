@@ -236,7 +236,12 @@ section{padding:110px 0;position:relative}
 .mission .quote em{color:var(--gold);font-weight:500}
 
 /* pillars */
-.pillars{margin-top:80px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pillars{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:24px;
+}
 @media(max-width:960px){.pillars{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.pillars{grid-template-columns:1fr}}
 .pillar{
@@ -437,7 +442,12 @@ section{padding:110px 0;position:relative}
 .story .attrib strong{display:block;color:var(--navy);font-weight:600}
 .story .attrib span{font-size:.88rem;color:var(--muted)}
 
-.voices{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voices{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:24px;
+}
 @media(max-width:900px){.voices{grid-template-columns:1fr}}
 .voice{
   background:#fff;padding:32px;border-radius:18px;
