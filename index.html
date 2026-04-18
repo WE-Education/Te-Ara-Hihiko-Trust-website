@@ -1,1 +1,1183 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Te Ara Hihiko Trust — Empowering minds, exploring worlds</title>
+<meta name="description" content="Te Ara Hihiko Trust creates equitable access to transformative international learning experiences for young people across Aotearoa New Zealand.">
+<link rel="icon" type="image/png" href="logo.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500&amp;family=Figtree:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#1B3A5C;
+  --navy-deep:#0F2540;
+  --green:#5BA04A;
+  --green-deep:#3E7A32;
+  --gold:#C9994A;
+  --gold-soft:#E8C77A;
+  --cream:#F8F4EC;
+  --cream-deep:#EFE7D5;
+  --ink:#18232F;
+  --muted:#5A6B7C;
+  --line:rgba(27,58,92,.14);
+  --shadow-sm:0 2px 6px rgba(15,37,64,.08);
+  --shadow-md:0 10px 30px -8px rgba(15,37,64,.18);
+  --shadow-lg:0 24px 60px -12px rgba(15,37,64,.28);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Figtree',system-ui,sans-serif;
+  font-weight:400;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- Display / Headings ---------- */
+.display{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-variation-settings:"opsz" 144, "SOFT" 100;
+  letter-spacing:-.015em;
+  line-height:1.02;
+}
+.eyebrow{
+  font-family:'Figtree',sans-serif;
+  font-weight:600;
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+}
+.eyebrow::before{
+  content:"";
+  width:28px;height:1px;
+  background:currentColor;
+  display:inline-block;
+}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+section{padding:110px 0;position:relative}
+@media(max-width:720px){section{padding:70px 0}}
+
+/* ---------- NAVBAR ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:18px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .3s ease, backdrop-filter .3s ease, box-shadow .3s ease, padding .3s ease;
+}
+.nav.scrolled{
+  background:rgba(248,244,236,.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--line);
+  padding:12px 28px;
+}
+.nav-logo{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;color:var(--navy);font-weight:500;font-size:1.15rem;letter-spacing:-.01em}
+.nav-logo img{height:44px;width:auto}
+.nav-logo small{display:block;font-family:'Figtree';font-size:.65rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--navy);position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nav-links a:hover::after{transform:scaleX(1)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--navy);color:var(--cream);
+  padding:12px 22px;border-radius:999px;
+  font-weight:600;font-size:.9rem;
+  border:none;cursor:pointer;
+  transition:all .3s cubic-bezier(.2,.7,.2,1);
+  box-shadow:var(--shadow-sm);
+}
+.btn:hover{background:var(--navy-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy);box-shadow:none}
+.btn.ghost:hover{background:var(--navy);color:var(--cream)}
+.btn.gold{background:var(--gold);color:#fff}
+.btn.gold:hover{background:#B68438}
+.btn .arrow{transition:transform .3s ease}
+.btn:hover .arrow{transform:translateX(4px)}
+
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px;color:var(--navy)}
+@media(max-width:900px){
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:var(--cream);flex-direction:column;padding:100px 32px;gap:28px;align-items:flex-start;box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:1.2rem}
+  .burger{display:flex}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  padding:130px 0 80px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(201,153,74,.12), transparent 55%),
+    radial-gradient(ellipse at 0% 90%, rgba(91,160,74,.10), transparent 60%),
+    var(--cream);
+}
+.hero .wrap{
+  display:grid;grid-template-columns:1.1fr .95fr;gap:70px;align-items:center;
+  position:relative;z-index:2;
+}
+@media(max-width:1020px){.hero .wrap{grid-template-columns:1fr;gap:50px}}
+
+.hero h1{
+  font-size:clamp(2.6rem,6.4vw,5.6rem);
+  color:var(--navy-deep);
+  margin:24px 0 28px;
+  font-weight:400;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--gold);
+  font-weight:300;
+}
+.hero h1 .kw{
+  position:relative;display:inline-block;
+}
+.hero h1 .kw::after{
+  content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:14px;
+  background:rgba(91,160,74,.28);z-index:-1;border-radius:3px;
+}
+.hero .lead{
+  font-size:1.15rem;max-width:540px;color:var(--muted);margin-bottom:36px;
+}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{
+  margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:540px;
+  border-top:1px solid var(--line);padding-top:28px;
+}
+.stat strong{
+  font-family:'Fraunces',serif;font-weight:500;font-size:2.2rem;color:var(--navy);display:block;line-height:1;
+}
+.stat span{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block}
+
+/* ---- Hero collage ---- */
+.collage{position:relative;aspect-ratio:1/1.05;min-height:480px}
+.ctile{
+  position:absolute;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);
+  background-size:cover;background-position:center;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.ctile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,37,64,.2));}
+.ctile:hover{transform:translateY(-6px) scale(1.02)}
+.ctile.c1{top:0;left:10%;width:55%;height:48%;animation:float 7s ease-in-out infinite}
+.ctile.c2{top:18%;right:0;width:42%;height:35%;animation:float 8s ease-in-out infinite .5s;border:6px solid var(--cream)}
+.ctile.c3{bottom:0;left:0;width:46%;height:44%;animation:float 9s ease-in-out infinite 1s}
+.ctile.c4{bottom:12%;right:6%;width:48%;height:42%;animation:float 7.5s ease-in-out infinite 1.5s;border:6px solid var(--cream)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+.badge{
+  position:absolute;top:44%;left:-4%;z-index:3;
+  background:var(--cream);color:var(--navy);
+  padding:14px 20px;border-radius:14px;
+  box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:12px;
+  font-size:.88rem;font-weight:500;
+  animation:float 6s ease-in-out infinite .8s;
+}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(91,160,74,.25)}
+
+/* koru scroll indicator */
+.scroll-ind{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  color:var(--navy);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  opacity:.7;
+}
+.scroll-ind svg{animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ---------- TAGLINE STRIP ---------- */
+.tagline{
+  background:var(--navy-deep);color:var(--cream-deep);
+  padding:30px 0;
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.marquee{display:flex;gap:60px;animation:scroll 40s linear infinite;white-space:nowrap}
+.marquee span{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;font-weight:300;display:inline-flex;align-items:center;gap:60px}
+.marquee span::after{content:"✦";color:var(--gold);font-size:1rem;font-style:normal}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ---------- MISSION ---------- */
+.mission{background:var(--cream)}
+.mission .wrap{display:grid;grid-template-columns:.9fr 1.2fr;gap:80px;align-items:start}
+@media(max-width:960px){.mission .wrap{grid-template-columns:1fr;gap:40px}}
+.mission h2{font-size:clamp(2.2rem,4.2vw,3.4rem);color:var(--navy-deep);margin:18px 0 0}
+.mission h2 em{color:var(--green);font-style:italic}
+.mission .body{font-size:1.08rem;color:var(--muted);max-width:560px}
+.mission .body p{margin:0 0 20px}
+.mission .quote{
+  margin-top:36px;padding:28px 32px;
+  border-left:3px solid var(--gold);
+  background:linear-gradient(90deg,rgba(201,153,74,.08),transparent);
+  font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--navy);
+  border-radius:0 12px 12px 0;
+}
+.mission .quote em{color:var(--gold);font-weight:500}
+
+/* pillars */
+.pillars{margin-top:80px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:960px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pillars{grid-template-columns:1fr}}
+.pillar{
+  background:#fff;padding:32px 28px;border-radius:18px;
+  border:1px solid var(--line);
+  transition:all .4s cubic-bezier(.2,.7,.2,1);
+  position:relative;overflow:hidden;
+}
+.pillar:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+.pillar .num{font-family:'Fraunces',serif;font-size:.85rem;color:var(--gold);font-weight:500;letter-spacing:.1em}
+.pillar h3{font-family:'Fraunces',serif;font-size:1.3rem;margin:14px 0 10px;color:var(--navy);font-weight:500}
+.pillar p{font-size:.94rem;color:var(--muted);margin:0}
+.pillar-ico{
+  width:48px;height:48px;border-radius:12px;
+  background:rgba(91,160,74,.12);color:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.pillar:nth-child(2) .pillar-ico{background:rgba(201,153,74,.15);color:var(--gold)}
+.pillar:nth-child(3) .pillar-ico{background:rgba(27,58,92,.1);color:var(--navy)}
+.pillar:nth-child(4) .pillar-ico{background:rgba(91,160,74,.12);color:var(--green)}
+
+/* ---------- VIDEO FEATURE ---------- */
+.video-feature{
+  background:var(--navy-deep);
+  color:var(--cream);
+  position:relative;
+  overflow:hidden;
+}
+.video-feature::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(201,153,74,.15),transparent 50%),
+    radial-gradient(circle at 80% 70%,rgba(91,160,74,.12),transparent 50%);
+}
+.video-feature .wrap{position:relative;text-align:center}
+.video-feature .eyebrow{color:var(--gold-soft)}
+.video-feature h2{
+  font-size:clamp(2.2rem,5vw,4rem);
+  color:var(--cream);
+  max-width:900px;margin:20px auto 50px;
+  font-weight:300;
+}
+.video-feature h2 em{color:var(--gold-soft);font-style:italic}
+.video-wrap{
+  max-width:1000px;margin:0 auto;
+  aspect-ratio:16/9;border-radius:20px;overflow:hidden;
+  position:relative;cursor:pointer;
+  box-shadow:0 40px 80px -20px rgba(0,0,0,.5);
+  background-size:cover;background-position:center;
+  background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80');
+}
+.video-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,64,.2),rgba(15,37,64,.5))}
+.play{
+  position:absolute;inset:0;margin:auto;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(248,244,236,.95);color:var(--navy-deep);
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;transition:all .4s ease;
+  box-shadow:0 0 0 0 rgba(248,244,236,.6);
+  animation:pulse 2.5s ease-in-out infinite;
+}
+.video-wrap:hover .play{transform:scale(1.1)}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(248,244,236,.5)}
+  50%{box-shadow:0 0 0 30px rgba(248,244,236,0)}
+}
+.play svg{margin-left:4px}
+.video-caption{
+  position:absolute;bottom:24px;left:28px;right:28px;z-index:2;
+  text-align:left;color:var(--cream);
+  display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;
+}
+.video-caption h4{font-family:'Fraunces',serif;font-weight:400;font-size:1.2rem;margin:0}
+.video-caption p{font-size:.85rem;opacity:.75;margin:4px 0 0}
+.video-caption span{font-size:.8rem;background:rgba(248,244,236,.15);padding:6px 14px;border-radius:999px;backdrop-filter:blur(10px)}
+
+/* secondary video thumbs */
+.video-thumbs{
+  margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin-left:auto;margin-right:auto;
+}
+@media(max-width:720px){.video-thumbs{grid-template-columns:1fr}}
+.vthumb{
+  aspect-ratio:16/10;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;
+  background-size:cover;background-position:center;
+  transition:transform .4s ease;
+}
+.vthumb:hover{transform:scale(1.02)}
+.vthumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,37,64,.6))}
+.vthumb .play-sm{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:44px;height:44px;border-radius:50%;background:rgba(248,244,236,.9);
+  display:flex;align-items:center;justify-content:center;color:var(--navy);z-index:2;
+}
+.vthumb span{position:absolute;bottom:12px;left:14px;z-index:2;color:#fff;font-size:.85rem;font-weight:500}
+
+/* ---------- GALLERY ---------- */
+.gallery{background:var(--cream-deep);position:relative;overflow:hidden}
+.gallery::before{
+  content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(201,153,74,.15),transparent 70%);
+  pointer-events:none;
+}
+.gallery-header{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px;gap:40px;flex-wrap:wrap}
+.gallery-header h2{font-size:clamp(2.2rem,4.2vw,3.4rem);color:var(--navy-deep);margin:16px 0 0;max-width:620px;font-weight:400}
+.gallery-header h2 em{color:var(--gold);font-style:italic}
+.gallery-filter{display:flex;gap:10px;flex-wrap:wrap}
+.gallery-filter button{
+  background:transparent;border:1.5px solid var(--line);color:var(--navy);
+  padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:500;cursor:pointer;
+  transition:all .3s ease;font-family:inherit;
+}
+.gallery-filter button.active,.gallery-filter button:hover{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:140px;
+  gap:16px;
+}
+.tile{
+  position:relative;overflow:hidden;border-radius:16px;cursor:pointer;
+  background-size:cover;background-position:center;
+  transition:all .5s cubic-bezier(.2,.7,.2,1);
+  box-shadow:var(--shadow-sm);
+}
+.tile::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(15,37,64,.75));
+  opacity:0;transition:opacity .4s ease;
+}
+.tile:hover{transform:scale(1.015);box-shadow:var(--shadow-lg)}
+.tile:hover::after{opacity:1}
+.tile .meta{
+  position:absolute;left:20px;right:20px;bottom:20px;z-index:2;
+  color:#fff;opacity:0;transform:translateY(10px);
+  transition:all .4s ease;
+}
+.tile:hover .meta{opacity:1;transform:translateY(0)}
+.tile .meta h4{font-family:'Fraunces',serif;font-weight:500;margin:0;font-size:1.05rem}
+.tile .meta p{font-size:.8rem;margin:4px 0 0;opacity:.85}
+
+/* tile spans */
+.t1{grid-column:span 5;grid-row:span 3}
+.t2{grid-column:span 4;grid-row:span 2}
+.t3{grid-column:span 3;grid-row:span 2}
+.t4{grid-column:span 4;grid-row:span 2}
+.t5{grid-column:span 3;grid-row:span 3}
+.t6{grid-column:span 5;grid-row:span 2}
+.t7{grid-column:span 4;grid-row:span 3}
+.t8{grid-column:span 4;grid-row:span 2}
+.t9{grid-column:span 4;grid-row:span 2}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:120px}
+  .t1,.t2,.t4,.t6,.t7,.t8,.t9{grid-column:span 3;grid-row:span 2}
+  .t3,.t5{grid-column:span 3;grid-row:span 2}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr;grid-auto-rows:200px}
+  .tile{grid-column:span 1 !important;grid-row:span 1 !important}
+}
+
+/* ---------- STORY ---------- */
+.story{background:var(--cream);position:relative}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+@media(max-width:960px){.story .wrap{grid-template-columns:1fr;gap:40px}}
+.story-img{
+  aspect-ratio:4/5;border-radius:20px;overflow:hidden;
+  background-size:cover;background-position:center;
+  background-image:url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=1000&q=80');
+  box-shadow:var(--shadow-lg);
+  position:relative;
+}
+.story-img::before{
+  content:"";position:absolute;top:-16px;right:-16px;width:140px;height:140px;
+  background:var(--gold);border-radius:20px;z-index:-1;
+}
+.story-img::after{
+  content:"";position:absolute;bottom:-16px;left:-16px;width:120px;height:120px;
+  background:var(--green);border-radius:20px;z-index:-1;
+}
+.story blockquote{
+  margin:0;font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.4;color:var(--navy-deep);
+  font-style:italic;position:relative;padding-left:40px;
+}
+.story blockquote::before{
+  content:"\201C";position:absolute;left:-10px;top:-30px;
+  font-size:7rem;color:var(--gold);opacity:.5;line-height:1;font-family:'Fraunces',serif;
+}
+.story .attrib{
+  margin-top:32px;display:flex;align-items:center;gap:14px;
+}
+.story .attrib .av{
+  width:46px;height:46px;border-radius:50%;background:var(--gold);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:500;
+}
+.story .attrib strong{display:block;color:var(--navy);font-weight:600}
+.story .attrib span{font-size:.88rem;color:var(--muted)}
+
+.voices{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.voices{grid-template-columns:1fr}}
+.voice{
+  background:#fff;padding:32px;border-radius:18px;
+  border:1px solid var(--line);
+  position:relative;
+  transition:all .4s ease;
+}
+.voice:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.voice::before{
+  content:"\201C";position:absolute;top:10px;right:20px;
+  font-family:'Fraunces',serif;font-size:4rem;color:var(--gold);opacity:.25;line-height:1;
+}
+.voice p{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--navy);line-height:1.5;margin:0 0 20px;position:relative;z-index:1}
+.voice cite{font-style:normal;font-size:.82rem;color:var(--muted);font-weight:600;letter-spacing:.05em}
+
+/* ---------- TRANSFORMATION ---------- */
+.transform-sec{background:var(--cream-deep);overflow:hidden;position:relative}
+.transform-sec h2{text-align:center;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy-deep);margin:16px auto 12px;max-width:800px;font-weight:400}
+.transform-sec h2 em{color:var(--gold);font-style:italic}
+.transform-sec .sub{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 70px}
+.transform-sec .eyebrow{display:flex;justify-content:center}
+
+.tflow{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:20px;align-items:stretch;
+  max-width:1100px;margin:0 auto;
+}
+@media(max-width:860px){.tflow{grid-template-columns:1fr;gap:16px}.tflow .arrow-big{display:none}}
+.tstep{
+  background:#fff;padding:36px 28px;border-radius:18px;
+  border:1px solid var(--line);text-align:center;
+  position:relative;
+}
+.tstep .phase{font-family:'Figtree';font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.tstep h4{font-family:'Fraunces',serif;font-weight:500;color:var(--navy);font-size:1.3rem;margin:0 0 14px}
+.tstep ul{list-style:none;padding:0;margin:0;font-size:.92rem;color:var(--muted);text-align:left}
+.tstep li{padding:8px 0 8px 24px;position:relative}
+.tstep li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;border-radius:50%;background:var(--green);opacity:.6}
+.tstep:nth-child(3) li::before{background:var(--gold)}
+.tstep:nth-child(5) li::before{background:var(--navy)}
+.arrow-big{display:flex;align-items:center;color:var(--gold);font-size:2rem;font-weight:300}
+
+/* ---------- IMPACT NUMBERS ---------- */
+.impact{background:var(--navy-deep);color:var(--cream);text-align:center;padding:90px 0}
+.impact h3{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 60px;color:var(--cream)}
+.impact h3 em{color:var(--gold-soft);font-style:italic}
+.i-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1000px;margin:0 auto}
+@media(max-width:800px){.i-grid{grid-template-columns:repeat(2,1fr);gap:30px}}
+.inum{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.5rem,5vw,3.8rem);color:var(--gold-soft);line-height:1}
+.ilabel{font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-deep);margin-top:10px;opacity:.8}
+
+/* ---------- PARTNERSHIP TIERS ---------- */
+.tiers{background:var(--cream)}
+.tiers-head{text-align:center;max-width:700px;margin:0 auto 70px}
+.tiers-head h2{font-size:clamp(2.2rem,4.2vw,3.4rem);color:var(--navy-deep);margin:16px 0 18px;font-weight:400}
+.tiers-head h2 em{color:var(--green);font-style:italic}
+.tiers-head p{color:var(--muted);font-size:1.05rem}
+.tiers-head .eyebrow{display:inline-flex}
+
+.tier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1040px){.tier-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.tier-grid{grid-template-columns:1fr}}
+.tier{
+  background:#fff;padding:36px 30px;border-radius:20px;
+  border:1px solid var(--line);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:all .4s cubic-bezier(.2,.7,.2,1);
+}
+.tier:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.tier.featured{background:var(--navy-deep);color:var(--cream);border-color:var(--navy-deep)}
+.tier.featured .tier-price{color:var(--gold-soft)}
+.tier.featured .tier-ben{color:var(--cream-deep)}
+.tier.featured .tier-ben li::before{background:var(--gold-soft)}
+.tier.featured .tier-name{color:var(--gold-soft)}
+
+.tier-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.tier-name{font-family:'Fraunces',serif;font-weight:500;color:var(--navy);font-size:1.2rem}
+.tier-flag{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;background:var(--gold);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
+.tier-price{font-family:'Fraunces',serif;font-weight:400;font-size:2.4rem;color:var(--navy-deep);line-height:1;margin:0 0 6px}
+.tier-price small{font-size:.85rem;color:var(--muted);font-family:'Figtree';font-weight:500}
+.tier-desc{font-size:.88rem;color:var(--muted);margin:0 0 24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.tier.featured .tier-desc{color:var(--cream-deep);opacity:.7;border-color:rgba(255,255,255,.15)}
+.tier-ben{list-style:none;padding:0;margin:0 0 28px;flex:1}
+.tier-ben li{padding:6px 0 6px 22px;position:relative;font-size:.88rem;color:var(--muted)}
+.tier-ben li::before{content:"";position:absolute;left:0;top:13px;width:8px;height:2px;background:var(--green);border-radius:2px}
+
+/* ---------- GET INVOLVED / CTA ---------- */
+.cta{
+  background:linear-gradient(135deg,var(--green-deep),var(--green));
+  color:#fff;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' opacity='0.08'><path fill='%23fff' d='M40 40c0-15 10-25 25-25'/><path fill='none' stroke='%23fff' stroke-width='2' d='M40 40c0-22 18-35 35-35'/></svg>");
+  background-size:200px;
+  opacity:.5;
+}
+.cta .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .8fr;gap:60px;align-items:center}
+@media(max-width:900px){.cta .wrap{grid-template-columns:1fr}}
+.cta h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.2rem,4.5vw,3.6rem);margin:0 0 20px;color:#fff;line-height:1.1}
+.cta h2 em{font-style:italic;color:var(--gold-soft)}
+.cta p{font-size:1.1rem;opacity:.92;max-width:560px;margin:0 0 32px}
+.cta-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.cta .btn{background:var(--cream);color:var(--navy-deep)}
+.cta .btn:hover{background:#fff}
+.cta .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.cta .btn.ghost:hover{background:#fff;color:var(--navy-deep);border-color:#fff}
+.cta-card{
+  background:rgba(255,255,255,.1);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.2);
+  padding:32px;border-radius:20px;
+}
+.cta-card h4{font-family:'Fraunces',serif;font-weight:500;color:var(--cream);margin:0 0 20px;font-size:1.1rem}
+.cta-card label{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:8px;font-weight:600}
+.cta-card input,.cta-card select{
+  width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:.95rem;
+  margin-bottom:18px;
+}
+.cta-card input::placeholder{color:rgba(255,255,255,.5)}
+.cta-card input:focus,.cta-card select:focus{outline:none;border-color:var(--gold-soft);background:rgba(255,255,255,.14)}
+.amount-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
+.amount-pills button{
+  padding:12px 8px;border-radius:10px;border:1.5px solid rgba(255,255,255,.25);
+  background:transparent;color:#fff;font-family:inherit;font-weight:600;cursor:pointer;
+  transition:all .3s ease;font-size:.9rem;
+}
+.amount-pills button:hover,.amount-pills button.active{background:var(--cream);color:var(--navy-deep);border-color:var(--cream)}
+.cta-card .btn{width:100%;justify-content:center}
+
+/* ---------- TRUSTEES ---------- */
+.trustees{background:var(--cream)}
+.trustees-head{text-align:center;max-width:700px;margin:0 auto 60px}
+.trustees-head h2{font-size:clamp(2rem,4vw,3rem);color:var(--navy-deep);margin:16px 0 14px;font-weight:400}
+.trustees-head h2 em{color:var(--gold);font-style:italic}
+.trustees-head p{color:var(--muted)}
+.trustees-head .eyebrow{display:inline-flex}
+
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+.trustee{
+  background:#fff;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);
+  transition:all .4s ease;
+}
+.trustee:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.trustee-img{
+  aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy),var(--green-deep));
+  position:relative;display:flex;align-items:center;justify-content:center;
+  background-size:cover;background-position:center;
+}
+.trustee-img .initial{
+  font-family:'Fraunces',serif;font-weight:500;font-size:4rem;color:rgba(255,255,255,.9);
+}
+.trustee:nth-child(2) .trustee-img{background:linear-gradient(135deg,var(--gold),#B68438)}
+.trustee:nth-child(3) .trustee-img{background:linear-gradient(135deg,var(--green),var(--navy-deep))}
+.trustee-body{padding:24px 26px}
+.trustee-body h4{font-family:'Fraunces',serif;font-weight:500;color:var(--navy-deep);font-size:1.2rem;margin:0 0 4px}
+.trustee-body .role{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.trustee-body p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy-deep);color:var(--cream-deep);padding:80px 0 30px}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:60px}
+@media(max-width:900px){.foot-top{grid-template-columns:1fr 1fr;gap:40px}}
+@media(max-width:520px){.foot-top{grid-template-columns:1fr}}
+.foot-brand img{height:56px;margin-bottom:20px;filter:brightness(1.1)}
+.foot-brand p{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:1.05rem;margin:0 0 20px}
+.foot-brand small{color:var(--cream-deep);opacity:.6;font-size:.85rem;line-height:1.6;display:block}
+.foot-col h5{font-family:'Figtree';font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 18px}
+.foot-col ul{list-style:none;padding:0;margin:0}
+.foot-col li{margin:0 0 10px;font-size:.93rem;opacity:.75;transition:opacity .3s ease}
+.foot-col li:hover{opacity:1;color:var(--gold-soft)}
+.foot-col li a{display:inline-flex;align-items:center;gap:8px}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:30px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  font-size:.82rem;opacity:.6;
+}
+.socials{display:flex;gap:10px}
+.socials a{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:all .3s ease;
+}
+.socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(24px);transition:all .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.1s}
+.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}
+.reveal.d4{transition-delay:.4s}
+
+/* Utilities */
+.center{text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="Te Ara Hihiko Trust">
+    <span>Te Ara Hihiko<small>Empowering minds</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#story">Stories</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#partner">Partner</a>
+    <a href="#trustees">Trustees</a>
+    <a href="#donate" class="btn gold">Donate <span class="arrow">→</span></a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h18M4 13h18M4 18h18"></path></svg>
+  </button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal visible">Aotearoa · New Zealand</span>
+      <h1 class="display reveal d1 visible">
+        Every young mind<br>
+        deserves a <span class="kw">passport</span><br>
+        to <em>possibility.</em>
+      </h1>
+      <p class="lead reveal d2 visible">
+        Te Ara Hihiko Trust removes financial barriers so that students from every background across Aotearoa can experience transformative international learning — and return home as confident, connected, future leaders.
+      </p>
+      <div class="hero-ctas reveal d3 visible">
+        <a href="#donate" class="btn">Support a student <span class="arrow">→</span></a>
+        <a href="#story" class="btn ghost">Read their stories</a>
+      </div>
+      <div class="hero-stats reveal d4 visible">
+        <div class="stat"><strong>56</strong><span>Students by Year 3</span></div>
+        <div class="stat"><strong>150+</strong><span>Annual target</span></div>
+        <div class="stat"><strong>$280k</strong><span>3-year goal</span></div>
+      </div>
+    </div>
+
+    <div class="collage reveal d2 visible">
+      <div class="ctile c1" style="background-image:url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&amp;q=80')"></div>
+      <div class="ctile c2" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?w=700&amp;q=80')"></div>
+      <div class="ctile c3" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&amp;q=80')"></div>
+      <div class="ctile c4" style="background-image:url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&amp;q=80')"></div>
+      <div class="badge"><span class="dot"></span>Applications now open for 2026</div>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <span>Scroll</span>
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v14m0 0l-5-5m5 5l5-5"></path></svg>
+  </div>
+</header>
+
+<!-- ================= TAGLINE MARQUEE ================= -->
+<div class="tagline">
+  <div class="marquee">
+    <span>He waka eke noa</span>
+    <span>Empowering minds</span>
+    <span>Exploring worlds</span>
+    <span>Ko tātou tēnei</span>
+    <span>Equity · Connection · Opportunity</span>
+    <span>He waka eke noa</span>
+    <span>Empowering minds</span>
+    <span>Exploring worlds</span>
+    <span>Ko tātou tēnei</span>
+    <span>Equity · Connection · Opportunity</span>
+  </div>
+</div>
+
+<!-- ================= MISSION ================= -->
+<section class="mission" id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Our Purpose</span>
+      <h2 class="display">A student's <em>background</em><br>should never determine<br>their access to opportunity.</h2>
+    </div>
+    <div class="reveal d1">
+      <div class="body">
+        <p>Across Aotearoa, there are capable, curious, and motivated students who are ready to step beyond their immediate environment. Yet too often, financial barriers stand in the way. <strong>Talent is everywhere — but opportunity is not.</strong></p>
+        <p>Te Ara Hihiko Trust creates meaningful pathways for students who may otherwise never access international learning. These aren't luxuries. They are transformative experiences that shape how young people see themselves and their place in the world.</p>
+      </div>
+      <div class="quote">
+        <em>He waka eke noa</em> — we are all in this together.
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5L12 2z"></path></svg>
+        </div>
+        <span class="num">01</span>
+        <h3>Scholarships &amp; Support</h3>
+        <p>Direct financial support so no student is left behind because of cost.</p>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pillar-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"></path></svg>
+        </div>
+        <span class="num">02</span>
+        <h3>Global Partnerships</h3>
+        <p>Schools, communities, and international institutions working together.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-4.5-8-11a8 8 0 1116 0c0 6.5-8 11-8 11z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+        </div>
+        <span class="num">03</span>
+        <h3>Safe &amp; Structured</h3>
+        <p>High-quality exchange programmes with pastoral care at every stage.</p>
+      </div>
+      <div class="pillar reveal d3">
+        <div class="pillar-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
+        </div>
+        <span class="num">04</span>
+        <h3>Equity First</h3>
+        <p>Prioritising Māori, Pasifika, and underserved community access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIDEO FEATURE ================= -->
+<section class="video-feature" id="watch">
+  <div class="wrap">
+    <span class="eyebrow reveal">Watch</span>
+    <h2 class="display reveal d1">This trip didn't just take me<br>to another country — it helped me<br>see a <em>bigger future</em> for myself.</h2>
+
+    <div class="video-wrap reveal d2" onclick="playVideo(this)">
+      <div class="play">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+      </div>
+      <div class="video-caption">
+        <div>
+          <h4>Voices of the Journey — 2025 Cohort</h4>
+          <p>Students share how international learning reshaped their futures · 4 min</p>
+        </div>
+        <span>HD · Captions</span>
+      </div>
+    </div>
+
+    <div class="video-thumbs">
+      <div class="vthumb reveal" style="background-image:url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&amp;q=80')">
+        <div class="play-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        <span>Inside a host school</span>
+      </div>
+      <div class="vthumb reveal d1" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&amp;q=80')">
+        <div class="play-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        <span>Homestay moments</span>
+      </div>
+      <div class="vthumb reveal d2" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&amp;q=80')">
+        <div class="play-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        <span>Returning home</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-header">
+      <div class="reveal">
+        <span class="eyebrow">Moments</span>
+        <h2 class="display">Faces, friendships,<br><em>first-times.</em></h2>
+      </div>
+      <div class="gallery-filter reveal d1">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="exchange">Exchange</button>
+        <button data-filter="school">School visits</button>
+        <button data-filter="culture">Culture</button>
+        <button data-filter="home">Homestay</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="tile t1 reveal" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&amp;q=80')">
+        <div class="meta"><h4>Welcome ceremony, Kyoto</h4><p>March 2025</p></div>
+      </div>
+      <div class="tile t2 reveal d1" style="background-image:url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&amp;q=80')">
+        <div class="meta"><h4>Classroom exchange</h4><p>Seoul</p></div>
+      </div>
+      <div class="tile t3 reveal d2" style="background-image:url('https://images.unsplash.com/photo-1591789397062-dd89a9a4cb4e?w=700&amp;q=80')">
+        <div class="meta"><h4>New friendships</h4><p>Shanghai</p></div>
+      </div>
+      <div class="tile t4 reveal d3" style="background-image:url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&amp;q=80')">
+        <div class="meta"><h4>Group presentation</h4><p>Tokyo</p></div>
+      </div>
+      <div class="tile t5 reveal" style="background-image:url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&amp;q=80')">
+        <div class="meta"><h4>Cultural immersion</h4><p>Kyoto</p></div>
+      </div>
+      <div class="tile t6 reveal d1" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&amp;q=80')">
+        <div class="meta"><h4>Host school, first day</h4><p>Sydney</p></div>
+      </div>
+      <div class="tile t7 reveal d2" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&amp;q=80')">
+        <div class="meta"><h4>Community learning</h4><p>Melbourne</p></div>
+      </div>
+      <div class="tile t8 reveal d3" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&amp;q=80')">
+        <div class="meta"><h4>Family farewell</h4><p>Auckland</p></div>
+      </div>
+      <div class="tile t9 reveal d4" style="background-image:url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&amp;q=80')">
+        <div class="meta"><h4>Homestay family</h4><p>Osaka</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRANSFORMATION FLOW ================= -->
+<section class="transform-sec">
+  <div class="wrap">
+    <span class="eyebrow reveal">From possibility to transformation</span>
+    <h2 class="display reveal d1">A single opportunity can<br>change the <em>direction</em> of a life.</h2>
+    <p class="sub reveal d2">Every student's journey follows three phases — from unfamiliar horizons to lifelong confidence.</p>
+
+    <div class="tflow">
+      <div class="tstep reveal d1">
+        <div class="phase">Before</div>
+        <h4>The Horizon</h4>
+        <ul>
+          <li>Limited exposure to the world</li>
+          <li>Low confidence in new places</li>
+          <li>Uncertainty about future pathways</li>
+        </ul>
+      </div>
+      <div class="arrow-big reveal d2">→</div>
+      <div class="tstep reveal d2">
+        <div class="phase">During</div>
+        <h4>The Journey</h4>
+        <ul>
+          <li>Cultural exchange &amp; school immersion</li>
+          <li>Collaborative real-world learning</li>
+          <li>Stepping outside comfort zones</li>
+        </ul>
+      </div>
+      <div class="arrow-big reveal d3">→</div>
+      <div class="tstep reveal d3">
+        <div class="phase">After</div>
+        <h4>The Return</h4>
+        <ul>
+          <li>Confidence &amp; independence grown</li>
+          <li>Broader global perspective</li>
+          <li>Stronger aspirations for the future</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDENT STORY ================= -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-img reveal"></div>
+    <div class="reveal d1">
+      <span class="eyebrow">A student's story</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:2rem;font-weight:400;color:var(--navy-deep);margin:16px 0 30px;line-height:1.15">Before this trip, I had never travelled outside of New Zealand.</h2>
+      <blockquote>
+        "When I first arrived, everything felt unfamiliar. But as the days went by, I began to try new things, speak up more, and connect with people in ways I never thought I could. I came back more independent, more open-minded, and more motivated to achieve my goals."
+      </blockquote>
+      <div class="attrib">
+        <div class="av">S</div>
+        <div>
+          <strong>Year 11 Student</strong>
+          <span>South Auckland · 2025 Cohort</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="voices">
+      <div class="voice reveal">
+        <p>At the start, I didn't want to speak at all. By the end of the programme, I was presenting in front of the whole group.</p>
+        <cite>— Year 10 Student</cite>
+      </div>
+      <div class="voice reveal d1">
+        <p>We couldn't speak the same language perfectly, but we still understood each other. That was the best part.</p>
+        <cite>— Student Participant</cite>
+      </div>
+      <div class="voice reveal d2">
+        <p>Before this, I didn't think about university. Now I feel like I have more options for my future.</p>
+        <cite>— Year 11 Student</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IMPACT NUMBERS ================= -->
+<section class="impact">
+  <div class="wrap">
+    <h3 class="reveal">What your support makes possible over <em>three years</em></h3>
+    <div class="i-grid">
+      <div class="reveal"><div class="inum" data-count="56">0</div><div class="ilabel">Students supported</div></div>
+      <div class="reveal d1"><div class="inum" data-count="280">0</div><div class="ilabel">Thousand NZD goal</div></div>
+      <div class="inum-wrap reveal d2"><div class="inum">100<span style="font-size:.5em;vertical-align:super">%</span></div><div class="ilabel">Equity-focused</div></div>
+      <div class="reveal d3"><div class="inum" data-count="12">0</div><div class="ilabel">Funding streams</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARTNERSHIP TIERS ================= -->
+<section class="tiers" id="partner">
+  <div class="wrap">
+    <div class="tiers-head">
+      <span class="eyebrow reveal">Partnership &amp; naming rights</span>
+      <h2 class="display reveal d1">Partner with us <em>for impact</em></h2>
+      <p class="reveal d2">Join a movement that empowers young people and strengthens communities. Every partnership unlocks doors for students who would otherwise miss out.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier reveal">
+        <div class="tier-top"><span class="tier-name">Community</span></div>
+        <div class="tier-price">$500<small> NZD</small></div>
+        <p class="tier-desc">Begin the journey alongside us.</p>
+        <ul class="tier-ben">
+          <li>Trust website acknowledgement</li>
+          <li>Certificate of appreciation</li>
+          <li>Annual impact report recognition</li>
+        </ul>
+        <a href="#donate" class="btn ghost">Become a partner</a>
+      </div>
+
+      <div class="tier reveal d1">
+        <div class="tier-top"><span class="tier-name">Supporting</span></div>
+        <div class="tier-price">$2,500<small> NZD</small></div>
+        <p class="tier-desc">Deepen your community impact.</p>
+        <ul class="tier-ben">
+          <li>Logo on programme materials</li>
+          <li>Social media acknowledgement</li>
+          <li>Invitation to programme events</li>
+          <li>All Community Partner benefits</li>
+        </ul>
+        <a href="#donate" class="btn ghost">Become a partner</a>
+      </div>
+
+      <div class="tier featured reveal d2">
+        <div class="tier-top"><span class="tier-name">Major</span><span class="tier-flag">Most popular</span></div>
+        <div class="tier-price">$5,000<small> NZD+</small></div>
+        <p class="tier-desc">Become part of the storytelling.</p>
+        <ul class="tier-ben">
+          <li>Prominent logo placement</li>
+          <li>Feature in programme storytelling</li>
+          <li>Attend &amp; engage in programme activities</li>
+          <li>All Supporting Partner benefits</li>
+        </ul>
+        <a href="#donate" class="btn gold">Become a partner</a>
+      </div>
+
+      <div class="tier reveal d3">
+        <div class="tier-top"><span class="tier-name">Strategic</span></div>
+        <div class="tier-price">$10,000<small> NZD+</small></div>
+        <p class="tier-desc">Name a cohort. Shape a generation.</p>
+        <ul class="tier-ben">
+          <li>Naming recognition for student cohort</li>
+          <li>Co-branding across campaigns</li>
+          <li>Direct engagement with outcomes</li>
+          <li>All Major Partner benefits</li>
+        </ul>
+        <a href="#donate" class="btn ghost">Become a partner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DONATE CTA ================= -->
+<section class="cta" id="donate">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal" style="color:var(--gold-soft)">Ways of giving</span>
+      <h2 class="reveal d1">Your gift <em>opens a door</em><br>that cannot be closed.</h2>
+      <p class="reveal d2">A typical exchange experience costs between NZD $4,500 and $6,000 per student — covering flights, programme delivery, homestay, and pastoral care. Every contribution goes directly toward student participation.</p>
+      <div class="cta-buttons reveal d3">
+        <a href="#" class="btn">Give monthly <span class="arrow">→</span></a>
+        <a href="#" class="btn ghost">Talk to our team</a>
+      </div>
+    </div>
+
+    <div class="cta-card reveal d2">
+      <h4>Make a one-time gift</h4>
+      <label>Amount (NZD)</label>
+      <div class="amount-pills">
+        <button>$50</button>
+        <button class="active">$150</button>
+        <button>$500</button>
+        <button>$1k</button>
+      </div>
+      <label>Email</label>
+      <input type="email" placeholder="your@email.com">
+      <a href="#" class="btn gold">Donate now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUSTEES ================= -->
+<section class="trustees" id="trustees">
+  <div class="wrap">
+    <div class="trustees-head">
+      <span class="eyebrow reveal">Our Trustees</span>
+      <h2 class="display reveal d1">Leadership grounded in <em>equity</em></h2>
+      <p class="reveal d2">Our trustees bring together experience, expertise, and a shared commitment to creating pathways for every young person in Aotearoa.</p>
+    </div>
+    <div class="tgrid">
+      <div class="trustee reveal">
+        <div class="trustee-img"><span class="initial">CY</span></div>
+        <div class="trustee-body">
+          <h4>Dr Colleen Young</h4>
+          <div class="role">Chair · Te Ara Hihiko Trust</div>
+          <p>Strategic oversight and governance leadership. A lifelong champion for equity, Colleen ensures the Trust stays focused on creating transformative opportunities for young people facing barriers.</p>
+        </div>
+      </div>
+      <div class="trustee reveal d1">
+        <div class="trustee-img"><span class="initial">LW</span></div>
+        <div class="trustee-body">
+          <h4>Leanne Webb</h4>
+          <div class="role">Principal, Aorere College · Trustee</div>
+          <p>A respected educational leader in South Auckland with a deep commitment to student wellbeing, equity, and inclusive education — championing pathways for diverse learners to succeed.</p>
+        </div>
+      </div>
+      <div class="trustee reveal d2">
+        <div class="trustee-img"><span class="initial">DL</span></div>
+        <div class="trustee-body">
+          <h4>Diana Li</h4>
+          <div class="role">Partner, RSM NZ · Trustee</div>
+          <p>Expertise in accounting, governance, and financial strategy. Diana provides the oversight that keeps the Trust operating with integrity, transparency, and long-term impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="logo.png" alt="Te Ara Hihiko Trust">
+        <p>Empowering minds, exploring worlds.</p>
+        <small>Te Ara Hihiko Trust is a registered New Zealand charitable trust dedicated to removing financial barriers to international learning for students across Aotearoa.</small>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">Our purpose</a></li>
+          <li><a href="#story">Student stories</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#watch">Watch videos</a></li>
+          <li><a href="#trustees">Our trustees</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#partner">Become a partner</a></li>
+          <li><a href="#">Corporate sponsorship</a></li>
+          <li><a href="#">School fundraising</a></li>
+          <li><a href="#">Planned giving</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>Auckland, Aotearoa NZ</li>
+          <li><a href="mailto:kia.ora@tearahihiko.nz">kia.ora@tearahihiko.nz</a></li>
+          <li><a href="#">+64 (0) 9 000 0000</a></li>
+        </ul>
+        <div class="socials" style="margin-top:18px">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5V12h3.6l.4-4h-4V6.3c0-.9.2-1.3 1.1-1.3H18V0h-3.8C10.5 0 9 1.6 9 4.7V8z"></path></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.3a1.8 1.8 0 110-3.6 1.8 1.8 0 010 3.6zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6-1.6 0-1.9 1.2-1.9 2.5V19h-3v-9h2.9v1.3a3.2 3.2 0 012.9-1.6c3.1 0 3.7 2 3.7 4.7z"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Te Ara Hihiko Trust · Registered Charity · Aotearoa New Zealand</span>
+      <span>He waka eke noa ✦ Designed with aroha</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)});
+
+// Burger menu
+const burger=document.getElementById('burger');
+const navLinks=document.getElementById('navLinks');
+burger?.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// Reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Count up numbers
+const cio=new IntersectionObserver((entries,ob)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;const target=+el.dataset.count;let n=0;
+      const step=target/60;
+      const t=setInterval(()=>{
+        n+=step;if(n>=target){n=target;clearInterval(t)}
+        el.textContent=Math.round(n);
+      },20);
+      ob.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(e=>cio.observe(e));
+
+// Gallery filter (visual, just toggles active)
+document.querySelectorAll('.gallery-filter button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.gallery-filter button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+
+// Amount pills
+document.querySelectorAll('.amount-pills button').forEach(b=>{
+  b.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelectorAll('.amount-pills button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+
+// Placeholder video play handler
+function playVideo(el){
+  alert('Video player placeholder — embed your hosted video here (YouTube, Vimeo, or self-hosted MP4).');
+}
+</script>
+
+
+</body></html>
