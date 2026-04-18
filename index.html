@@ -238,22 +238,47 @@ section{padding:110px 0;position:relative}
 /* pillars */
 .pillars{
   margin-top:80px;
+
+  width:100vw;
+  margin-left:calc(50% - 50vw);  /* break out of container */
+
+  padding:0 60px;
+
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  gap:32px;
+  gap:40px;
 }
 @media(max-width:960px){.pillars{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.pillars{grid-template-columns:1fr}}
 .pillar{
-  background:#fff;padding:32px 28px;border-radius:18px;
+  background:#fff;
+  padding:32px 28px;
+  border-radius:18px;
   border:1px solid var(--line);
-  transition:all .4s cubic-bezier(.2,.7,.2,1);
-  position:relative;overflow:hidden;
+
+  aspect-ratio: 1 / 1;   /* ⭐ THIS MAKES THEM PERFECT SQUARES */
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
 .pillar:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
 .pillar .num{font-family:'Fraunces',serif;font-size:.85rem;color:var(--gold);font-weight:500;letter-spacing:.1em}
-.pillar h3{font-family:'Fraunces',serif;font-size:1.3rem;margin:14px 0 10px;color:var(--navy);font-weight:500}
-.pillar p{font-size:.94rem;color:var(--muted);margin:0}
+.pillar h3{
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  margin:14px 0 10px;
+  color:var(--navy);
+  font-weight:500;
+
+  line-height:1.2;   /* ⭐ ADD THIS */
+}
+
+.pillar p{
+  font-size:0.9rem;  /* ⭐ CHANGE THIS (was .94rem) */
+  color:var(--muted);
+  margin:0;
+}
 .pillar-ico{
   width:48px;height:48px;border-radius:12px;
   background:rgba(91,160,74,.12);color:var(--green);
