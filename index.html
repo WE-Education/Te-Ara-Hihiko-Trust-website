@@ -446,9 +446,9 @@ section{padding:110px 0;position:relative}
 .voices{
   margin:80px auto 0;
   display:grid;
-  grid-template-columns: repeat(5, 1fr);  /* 5 in one row */
-  gap:20px;
-  max-width:1200px;   /* wider so 5 can fit */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap:28px;              /* more space between cards */
+  max-width:1300px;      /* wider container = less squished */
 }
 
 @media(max-width:700px){
@@ -458,9 +458,10 @@ section{padding:110px 0;position:relative}
 }
 .voice{
   background:#fff;
-  padding:16px;   /* slightly smaller */
+  padding:20px;          /* slightly bigger for balance */
   border-radius:18px;
   border:1px solid var(--line);
+  height:100%;           /* makes all cards equal height */
 }
 @media(max-width:1100px){
   .voices{
