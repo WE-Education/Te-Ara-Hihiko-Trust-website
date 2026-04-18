@@ -445,10 +445,14 @@ section{padding:110px 0;position:relative}
 /* voices */
 .voices{
   margin:80px auto 0;
-  display:grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap:28px;              /* more space between cards */
-  max-width:1300px;      /* wider container = less squished */
+  display:flex;
+  justify-content:space-between;  /* evenly spreads across width */
+  gap:32px;
+  max-width:1400px;
+}
+
+.voice{
+  flex:1;
 }
 
 @media(max-width:700px){
